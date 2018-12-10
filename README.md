@@ -5,14 +5,14 @@ This project was made with [Jekyll](https://jekyllrb.com/)
 # How to install
 
 - git clone
-- bundle install
+- install jekyll -> `gem install jekyll`
+- bundle install -> `gem install bundler`
 - jekyll serve
 
 # Contact
 
 - samuelsilvawb@gmail.com
 - [Twitter](https://twitter.com/samuelsilvadev)
-
 
 # License
 
