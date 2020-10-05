@@ -10,13 +10,14 @@ blog_theme: dark # Or use dark
 
 # Profile information
 name: Samuel Silva
-tagline: Front-end Developer
-about-description: I'm 22 years old, I love be a developer, so many thing that I can do every days. My main skill is work with web developing, I like so much HTML5, CSS3, Javascript, and yours thousands frameworks. I love new friends, so let's talk :D
+tagline: Frontend Developer
+about-description: Hello! I'm a Frontend Developer with 5 years of experience. Currently living in Porto, Portugal. Since the beginning of my journey I've been collaborating with very talented people which help me a lot through my career. I'm interested in everything about the web, I also like to deep dive in concepts to really understanding what I am doing and how to delivery the best possible result.
 pic: profile.jpg  # Place a 200x200 picture inside /assets/img/ folder and provide the name of the file below
+
 
 # Contact links
 email: samuelsilvawb@gmail.com
-phone: 55 85 992309769  
+phone: +351 911975267
 website: samuelsilvadev.github.io 
 linkedin: samuel-silva-olv
 github: samuelsilvadev 
