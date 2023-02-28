@@ -3,8 +3,10 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   pathPrefix: "/samuelsilvadev.github.io",
   siteMetadata: {
-    title: `samuelsilvadev.github.io`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: "Samuel Silva",
+    siteUrl: "https://samuelsilvadev.github.io",
+    description:
+      "This site describes details about Samuel, who is a frontend developer and is very passionate about building great products. Currently is working at @carlsberg, using react, typescript, jest, storybook, next.js and much more.",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -26,7 +28,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src/images`,
       },
       __key: "images",
     },
@@ -34,7 +36,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: `${__dirname}/src/pages`,
       },
       __key: "pages",
     },

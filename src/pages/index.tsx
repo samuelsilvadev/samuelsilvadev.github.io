@@ -1,7 +1,8 @@
 import * as React from "react";
-import type { HeadFC, PageProps } from "gatsby";
+import { HeadFC, PageProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { colors } from "../styles/constants";
+import { InternalHead } from "../components/internal-head";
 
 const pageStyles = {
   color: colors.primary,
@@ -40,7 +41,7 @@ const getInTouchParagraphStyles = {
   fontStyle: "normal",
 };
 
-export const Head: HeadFC = () => <title>Samuel Silva - Home Page</title>;
+export const Head: HeadFC = () => <InternalHead titleComplement="Home Page" />;
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
