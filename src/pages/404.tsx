@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link, HeadFC, PageProps } from "gatsby";
 import { colors } from "../styles/constants";
+import { InternalHead } from "../components/internal-head";
 
 const pageStyles = {
   color: colors.primary,
@@ -16,7 +17,9 @@ const paragraphStyles = {
   marginBottom: 48,
 };
 
-export const Head: HeadFC = () => <title>Samuel Silva - Not found</title>;
+export const Head: HeadFC = () => (
+  <InternalHead titleComplement="Page not found" />
+);
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
