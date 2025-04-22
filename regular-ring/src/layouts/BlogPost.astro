@@ -1,0 +1,73 @@
+---
+import Layout from './Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+	<article class="max-w-4xl mx-auto px-4 py-16">
+		<header class="mb-12">
+			<h1 class="text-4xl md:text-5xl font-bold mb-6">{frontmatter.title}</h1>
+			<div class="flex items-center space-x-4 text-gray-600 dark:text-gray-400">
+				<div class="flex items-center">
+					<Icon name="mdi:calendar" class="w-5 h-5 mr-2" />
+					<time datetime={frontmatter.pubDate.toISOString()}>
+						{frontmatter.pubDate.toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric',
+						})}
+					</time>
+				</div>
+				{frontmatter.author && (
+					<div class="flex items-center">
+						<Icon name="mdi:account" class="w-5 h-5 mr-2" />
+						<span>{frontmatter.author}</span>
+					</div>
+				)}
+			</div>
+		</header>
+
+		<div class="prose dark:prose-invert max-w-none">
+			<slot />
+		</div>
+
+		<footer class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+			<div class="flex justify-between items-center">
+				<div class="flex space-x-4">
+					{frontmatter.tags?.map((tag) => (
+						<a
+							href={`/tags/${tag}`}
+							class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+						>
+							#{tag}
+						</a>
+					))}
+				</div>
+				<div class="flex space-x-4">
+					<a
+						href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+							frontmatter.title
+						)}&url=${encodeURIComponent(Astro.url.href)}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+					>
+						<Icon name="mdi:twitter" class="w-6 h-6" />
+					</a>
+					<a
+						href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
+							Astro.url.href
+						)}&title=${encodeURIComponent(frontmatter.title)}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+					>
+						<Icon name="mdi:linkedin" class="w-6 h-6" />
+					</a>
+				</div>
+			</div>
+		</footer>
+	</article>
+</Layout>

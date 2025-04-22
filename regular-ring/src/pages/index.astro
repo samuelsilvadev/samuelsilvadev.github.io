@@ -1,0 +1,91 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout title="Samuel Silva - Blog" description="Personal blog about technology and development">
+			<div class="container mx-auto px-6">
+				<header class="py-32 relative">
+					<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[800px] blur-[120px] -z-10">
+						<div class="absolute top-0 left-0 w-1/2 h-1/2 bg-[#FF4F70] opacity-20 rounded-full"></div>
+						<div class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-[#7000FF] opacity-20 rounded-full"></div>
+					</div>
+					<h1 class="text-7xl font-bold mb-2 bg-gradient-to-r from-[#FF4F70] to-[#7000FF] text-transparent bg-clip-text">.My Zone.</h1>
+					<div class="flex items-center space-x-4 mt-12">
+						<button class="p-2 rounded-full hover:bg-[#1A1A1A] transition-colors text-[#F5F5F5]">
+							<Icon name="mdi:magnify" class="w-5 h-5" />
+						</button>
+						<div class="flex space-x-3">
+							<a href="#" class="px-5 py-2 text-sm rounded-full bg-[#1A1A1A] text-[#F5F5F5] hover:bg-[#FF4F70] hover:text-[#0D0D0D] transition-colors">Branding</a>
+							<a href="#" class="px-5 py-2 text-sm rounded-full bg-[#1A1A1A] text-[#F5F5F5] hover:bg-[#FF4F70] hover:text-[#0D0D0D] transition-colors">Development</a>
+							<a href="#" class="px-5 py-2 text-sm rounded-full bg-[#1A1A1A] text-[#F5F5F5] hover:bg-[#FF4F70] hover:text-[#0D0D0D] transition-colors">Design</a>
+						</div>
+					</div>
+				</header>
+
+				<section class="mb-32">
+					<article class="grid grid-cols-2 gap-16 mb-32">
+						<div class="aspect-[4/3] bg-[#1A1A1A] rounded-lg overflow-hidden group">
+							<img 
+								src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+								alt="Featured post"
+								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+							/>
+						</div>
+						<div class="flex flex-col justify-center">
+							<span class="text-[#AFAFAF] mb-6 text-sm">09 April 2024</span>
+							<h2 class="text-4xl font-bold mb-6 text-[#F5F5F5]">Building Modern Web Applications with React and TypeScript</h2>
+							<span class="inline-block px-4 py-1 bg-[#7000FF]/20 text-[#7000FF] rounded-full text-sm mb-6">Development</span>
+							<p class="text-[#AFAFAF] mb-8 text-lg leading-relaxed">A comprehensive guide to building scalable and maintainable web applications using React and TypeScript.</p>
+							<a href="/blog/modern-web-development" class="text-[#F5F5F5] hover:text-[#FF4F70] transition-colors">Read more</a>
+						</div>
+					</article>
+
+					<h2 class="text-5xl font-bold mb-16 text-[#F5F5F5]">Our latest</h2>
+					
+					<div class="grid grid-cols-2 gap-20">
+						<article>
+							<div class="aspect-[4/3] bg-[#1A1A1A] rounded-lg overflow-hidden mb-8 group">
+								<img 
+									src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+									alt="Blog post"
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								/>
+							</div>
+							<span class="text-[#AFAFAF] mb-3 block text-sm">24 March 2024</span>
+							<h3 class="text-2xl font-bold mb-4 text-[#F5F5F5]">Getting Started with Astro</h3>
+							<div class="flex space-x-3">
+								<span class="px-4 py-1 bg-[#1A1A1A] text-[#F5F5F5] rounded-full text-sm">Tutorial</span>
+								<span class="px-4 py-1 bg-[#1A1A1A] text-[#F5F5F5] rounded-full text-sm">Web Development</span>
+							</div>
+						</article>
+
+						<article>
+							<div class="aspect-[4/3] bg-[#1A1A1A] rounded-lg overflow-hidden mb-8 group">
+								<img 
+									src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+									alt="Blog post"
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								/>
+							</div>
+							<span class="text-[#AFAFAF] mb-3 block text-sm">20 March 2024</span>
+							<h3 class="text-2xl font-bold mb-4 text-[#F5F5F5]">Modern CSS Techniques</h3>
+							<div class="flex space-x-3">
+								<span class="px-4 py-1 bg-[#1A1A1A] text-[#F5F5F5] rounded-full text-sm">CSS</span>
+								<span class="px-4 py-1 bg-[#1A1A1A] text-[#F5F5F5] rounded-full text-sm">Design</span>
+							</div>
+						</article>
+					</div>
+				</section>
+			</div>
+		</Layout>
+	</body>
+</html>
