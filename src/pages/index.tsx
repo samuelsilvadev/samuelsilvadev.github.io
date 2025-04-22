@@ -51,40 +51,46 @@ const IndexPage: React.FC<PageProps> = () => {
         width={100}
         height={100}
         src="../images/profile.jpeg"
-        alt="Samuel's picture, with sunglasses and on a sunny day on Porto"
+        alt="Samuel smiling, wearing sunglasses on a sunny day in Porto"
       />
-      <h1 style={headingStyles}>
-        Hello, Welcome 👋
-        <br />
-        <span style={headingAccentStyles}>
-          — My name is Samuel, and you just reached my personal website.
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        I'm a Frontend developer, who is passionate about building great
-        products. I'm currently working at{" "}
-        <a
-          href="https://github.com/carlsberg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @carlsberg
-        </a>
-        , using tons of cool technology and best practices to deliver the best
-        experience possible to our users.
-      </p>
+      <header>
+        <h1 style={{ ...headingStyles, animation: "fadeIn 1s ease-out" }}>
+          Hello, Welcome 👋
+          <br />
+          <span style={headingAccentStyles}>
+            I'm Samuel — and this is my corner of the internet.
+          </span>
+        </h1>
+      </header>
+
+      <article>
+        <p style={paragraphStyles}>
+          I'm a Frontend Developer with a passion for building products that
+          people love to use. I currently work at{" "}
+          <a
+            href="https://github.com/amplemarket"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @Amplemarket
+          </a>
+          , where I focus on crafting smooth user experiences with cutting-edge
+          tech and strong engineering practices.
+        </p>
+      </article>
+
       <section>
-        <h2 style={getInTouchHeadingStyles}>Get in touch</h2>
+        <h2 style={getInTouchHeadingStyles}>Let's Connect</h2>
         <p style={getInTouchParagraphStyles}>
-          If you have any ideas or just want to catch-up, you can find me on{" "}
+          Got a project in mind? Or just want to say hi? You’ll find me on{" "}
           <a
             href="https://twitter.com/samuelsilvadev"
             target="_blank"
             rel="noopener noreferrer"
           >
-            twitter
-          </a>
-          , of even via{" "}
+            Twitter
+          </a>{" "}
+          — or feel free to drop me an{" "}
           <a
             href="mailto:samuelsilvawb@gmail.com"
             target="_blank"
@@ -92,8 +98,18 @@ const IndexPage: React.FC<PageProps> = () => {
           >
             email
           </a>
+          .
         </p>
       </section>
+
+      <style>
+        {`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}
+      </style>
     </main>
   );
 };
