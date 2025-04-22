@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<footer class="border-t-4 border-[#0D0D0D] mt-32">
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class="flex items-center justify-between h-20">
+      <span class="text-sm text-[#0D0D0D] font-medium">© {new Date().getFullYear()}</span>
+      <div class="flex items-center gap-6">
+        <a 
+          href="https://github.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-[#0D0D0D] hover:-rotate-12 transition-transform"
+        >
+          <Icon name="mdi:github" class="w-6 h-6" />
+        </a>
+        <a 
+          href="https://twitter.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-[#0D0D0D] hover:-rotate-12 transition-transform"
+        >
+          <Icon name="mdi:twitter" class="w-6 h-6" />
+        </a>
+        <a 
+          href="https://linkedin.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-[#0D0D0D] hover:-rotate-12 transition-transform"
+        >
+          <Icon name="mdi:linkedin" class="w-6 h-6" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer> 
