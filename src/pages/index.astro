@@ -27,11 +27,11 @@ import Profile from "../components/Profile/Profile.astro";
 
         <header class="mt-2">
           <h1
-            class="text-4xl font-bold border-b-4 border-black uppercase inline-block"
+            class="text-4xl font-bold border-b-4 border-[#0D0D0D] uppercase inline-block"
           >
             Hello, Welcome 👋
             <br />
-            <span class="text-base text-gray-400 italic">
+            <span class="text-base text-[#555] italic tracking-widest">
               I'm Samuel — and this is my corner of the internet.
             </span>
           </h1>
@@ -39,7 +39,7 @@ import Profile from "../components/Profile/Profile.astro";
 
         <article>
           <p
-            class="text-[1.1rem] leading-[1.6] bg-white p-4 border-2 border-dashed border-black my-4"
+            class="text-[1.1rem] leading-[1.6] bg-white p-4 border-2 border-dashed border-[#0D0D0D] my-4"
           >
             I'm a Frontend Developer with a passion for building products that
             people love to use. I currently work at{" "}
@@ -47,7 +47,7 @@ import Profile from "../components/Profile/Profile.astro";
               href="https://github.com/amplemarket"
               target="_blank"
               rel="noopener noreferrer"
-              class="hover:-rotate-2 transition-transform"
+              class="underline underline-offset-4 hover:text-blue-600 transition-colors focus:text-blue-600"
             >
               @Amplemarket
             </a>
@@ -58,12 +58,12 @@ import Profile from "../components/Profile/Profile.astro";
 
         <section>
           <h2
-            class="text-[1.5rem] mt-8 mb-4 font-black uppercase border-b-4 border-black inline-block pb-2"
+            class="text-[1.5rem] mt-8 mb-4 font-black uppercase border-b-4 border-[#0D0D0D] inline-block pb-2"
           >
             Let's Connect
           </h2>
           <p
-            class="text-[1.1rem] leading-[1.6 p-4 border-2 border-dashed border-black my-4 bg-gray-200"
+            class="text-[1.1rem] leading-[1.6 p-4 border-2 border-dashed border-[#0D0D0D] my-4 bg-[#e8e8e8]"
           >
             Got a project in mind? Or just want to say hi? You’ll find me on{
               " "
@@ -72,6 +72,7 @@ import Profile from "../components/Profile/Profile.astro";
               href="https://twitter.com/samuelsilvadev"
               target="_blank"
               rel="noopener noreferrer"
+              class="underline underline-offset-4 hover:text-blue-600 focus:text-blue-600 transition-colors"
             >
               Twitter
             </a>{" "}
@@ -80,6 +81,7 @@ import Profile from "../components/Profile/Profile.astro";
               href="mailto:samuelsilvawb@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
+              class="underline underline-offset-4 hover:text-blue-600 focus:text-blue-600 transition-colors"
             >
               email
             </a>
