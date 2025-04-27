@@ -1,0 +1,111 @@
+---
+import { Icon } from 'astro-icon/components';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const posts = [
+  {
+    title: "Building Modern Web Applications with React and TypeScript",
+    description: "A comprehensive guide to building scalable and maintainable web applications using React and TypeScript.",
+    date: "2024-04-09",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    category: "Development",
+    slug: "modern-web-development"
+  },
+  {
+    title: "Getting Started with Astro",
+    description: "Learn how to build fast, content-focused websites with Astro's next-gen island architecture.",
+    date: "2024-03-24",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+    category: "Tutorial",
+    slug: "getting-started-with-astro"
+  },
+  {
+    title: "Modern CSS Techniques",
+    description: "Explore the latest CSS features and techniques for building modern user interfaces.",
+    date: "2024-03-20",
+    image: "https://images.unsplash.com/photo-1550439062-609e1531270e",
+    category: "Design",
+    slug: "modern-css-techniques"
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={SITE_DESCRIPTION} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<title>{SITE_TITLE}</title>
+	</head>
+	<body class="bg-[#FFFDFA]">
+		<Header />
+		
+		<main class="pt-32">
+			<div class="max-w-[1400px] mx-auto px-6">
+				<header class="mb-24">
+					<h1 class="text-8xl font-bold mb-8 relative inline-block">
+						<span class="relative z-10">Welcome to</span>
+						<div class="absolute -bottom-2 left-0 w-full h-6 bg-[#FF8E3C] -rotate-1"></div>
+					</h1>
+					<h1 class="text-8xl font-bold mb-12">My corner of the internet</h1>
+					<p class="text-2xl text-[#0D0D0D]/70 max-w-2xl">
+						Here you'll find my thoughts, projects, and reflections on the world of software development, mostly on <i>frontend development</i> though.
+					</p>
+				</header>
+
+				<section class="mb-32">
+					<div class="flex items-center justify-between mb-12">
+						<h2 class="text-4xl font-bold">Latest Posts</h2>
+						<button class="p-3 bg-[#E4E4E7] border-4 border-[#0D0D0D] rounded-lg shadow-[4px_4px_0px_0px_rgba(13,13,13)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all">
+							<Icon name="mdi:magnify" class="w-6 h-6" />
+						</button>
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						{posts.map(post => (
+							<article class="group">
+								<a href={`/blog/${post.slug}`} class="block">
+									<div class="aspect-[4/3] mb-6 rounded-xl border-4 border-[#0D0D0D] overflow-hidden relative shadow-[8px_8px_0px_0px_rgba(13,13,13)] group-hover:shadow-none group-hover:translate-x-[6px] group-hover:translate-y-[6px] transition-all">
+										<img 
+											src={post.image} 
+											alt={post.title}
+											class="w-full h-full object-cover"
+										/>
+									</div>
+									<div class="flex items-center gap-4 mb-4">
+										<time class="text-sm text-[#0D0D0D]/70">
+											{new Date(post.date).toLocaleDateString('en-US', {
+												year: 'numeric',
+												month: 'long',
+												day: 'numeric'
+											})}
+										</time>
+										<span class="px-4 py-1 text-sm font-medium bg-[#FF8E3C] border-2 border-[#0D0D0D] rounded-full">
+											{post.category}
+										</span>
+									</div>
+									<h3 class="text-xl font-bold mb-2 group-hover:-rotate-1 transition-transform">
+										{post.title}
+									</h3>
+									<p class="text-[#0D0D0D]/70">
+										{post.description}
+									</p>
+								</a>
+							</article>
+						))}
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<Footer />
+	</body>
+</html>
